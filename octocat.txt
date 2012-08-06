@@ -1,3 +1,0 @@
-Hello there, I am the Git Octocat. One of the cooler mascots for Linux.
-
-I am better than octodog.
