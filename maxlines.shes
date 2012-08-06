@@ -1,0 +1,42 @@
+#!/bin/bash
+###############
+# Script name: printnum.sh
+# Case #1: ./printnum.sh  <integer>
+# Script name: printnum.sh
+# Authors name: Bob D'Andrea
+# Script editor: William Smith
+# Course number: ITEC 400
+# Script functionality: This script is designed to accept one positive integer greater than zero. It will print a comma separated list of integers all on the same line.
+# Each value will decrease by one and the last number will not be followed by a
+# comma.
+# Assignment number: 2-1
+#
+###########
+# Assign the first command line argument to the variable NUMBER.
+NUMBER=$1
+# One argument must be provided, otherwise don't execute
+if [ $NUMBER -eq 1 ]
+      then
+      print "Please enter one argument."
+      exit 0
+#The value of the command line argument can't
+#be less than or equal to zero.
+elif [ $NUMBER -le 0 ] #test value is positive intger
+      then
+      echo "Please enter a number greater than 0"
+      exit 0
+fi
+
+# Integer value must be greater than zero
+while [ $NUMBER -gt 0 ]
+do
+ printf $NUMBER
+# If the value of the argument is greater than one, insert a comma after the integer
+ if [ $NUMBER -gt 1 ]
+ then
+   printf ","
+ fi
+# Decrease the value of NUMBER by one with each iteration
+ NUMBER=$(($NUMBER - 1))
+done
+print""
